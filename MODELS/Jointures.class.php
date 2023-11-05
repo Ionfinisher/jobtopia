@@ -4,6 +4,7 @@ class Jointure extends Data
 {
     public function getCredents($username, $password)
     {
+        // credents == credentials
         $bdd = $this->connect();
         $req = $bdd->prepare("SELECT id, table_name, username, password FROM Job_seekers WHERE username = :username AND password = :password UNION SELECT * FROM Employers WHERE username = :username AND password = :password");
         $req->execute(array(
